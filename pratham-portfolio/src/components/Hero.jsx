@@ -92,7 +92,7 @@ const Hero = () => {
               </Button>
               <Button asChild variant="outline-white" size="xl" className="font-bold">
                 <a href="/resume.pdf" download="Pratham_Modi_Resume.pdf">
-                  <FileDown size={18} /> Download Résumé
+                  <FileDown size={18} /> Download Resume
                 </a>
               </Button>
             </div>
