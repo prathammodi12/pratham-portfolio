@@ -1,107 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Layout, Database, Terminal } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
 
-const bundles = [
+const skillCategories = [
   {
-    label: 'Core Engineering',
-    icon: <Cpu size={20} />,
-    color: 'text-blue-600',
-    bg: 'bg-blue-500',
-    badgeVariant: 'blue',
-    skills: ['Java SE / EE', 'Spring Boot', 'Liferay Service Builder', 'Microservices Architecture'],
+    title: "Backend Engine",
+    color: "indigo",
+    skills: ["Java SE/EE", "Spring Boot", "Liferay Portal OSGI modules", "Microservices Architecture"]
   },
   {
-    label: 'Frontend Systems',
-    icon: <Layout size={20} />,
-    color: 'text-indigo-600',
-    bg: 'bg-slate-900',
-    badgeVariant: 'indigo',
-    skills: ['React.js', 'Modern JavaScript (ES6+)', 'Tailwind CSS', 'Enterprise UI Design'],
+    title: "Frontend UI",
+    color: "cyan",
+    skills: ["React.js", "Javascript (ES6+)", "Tailwind CSS", "Shadcn UI", "Material UI (MUI)"]
   },
   {
-    label: 'Data Architecture',
-    icon: <Database size={20} />,
-    color: 'text-emerald-600',
-    bg: 'bg-emerald-500',
-    badgeVariant: 'emerald',
-    skills: ['PostgreSQL', 'MySQL Administration', 'MongoDB NoSQL', 'Relational Mapping'],
+    title: "Database Architecture",
+    color: "purple",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Data Relational Mapping"]
   },
   {
-    label: 'Developer Toolchain',
-    icon: <Terminal size={20} />,
-    color: 'text-amber-600',
-    bg: 'bg-amber-400',
-    badgeVariant: 'amber',
-    skills: ['Git / GitHub', 'Postman API Testing', 'IntelliJ / VS Code', 'CI/CD Foundations'],
-  },
+    title: "Developer Toolchain",
+    color: "blue",
+    skills: ["Git/GitHub Ops", "Postman API Design", "Antigravity", "IntelliJ IDEA"]
+  }
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-white border-b border-border">
-      <div className="section-container">
-        {/* Header */}
-        <div className="flex flex-col lg:flex-row items-start justify-between gap-10 mb-16">
-          <div className="max-w-xl">
-            <span className="section-label">Capability Stack</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-              Tools of the trade.
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              My technical focus is built on scalability, reliability, and performance — 
-              choosing technologies that empower enterprise growth.
-            </p>
-          </div>
-
-          {/* Summary card */}
-          <Card className="p-6 flex-shrink-0 w-full lg:w-64 hover:shadow-lg hover:border-primary/30 transition-all">
-            <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">Current Focus</p>
-            <p className="text-sm font-semibold text-slate-800 leading-relaxed">
-              Architecting modular Liferay services with modern React frontends and clean data layers.
-            </p>
-            <div className="mt-4 w-full h-1.5 rounded-full bg-slate-100 overflow-hidden">
-              <div className="h-full w-4/5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full" />
-            </div>
-          </Card>
+    <section id="skills" className="py-32 relative">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        <div className="text-center mb-20">
+          <span className="text-indigo-500 dark:text-cyan-400 font-bold tracking-widest text-sm uppercase mb-4 block">Capability Stack</span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white glow-text">
+            Technical <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-500 dark:from-cyan-400 dark:to-indigo-400">Toolkit.</span>
+          </h2>
         </div>
 
-        {/* Skill cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {bundles.map((bundle, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {skillCategories.map((category, idx) => (
+            <motion.div 
+              key={category.title}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-transform duration-300 relative group overflow-hidden"
             >
-              <Card className="h-full p-6 hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 transition-all duration-300 group">
-                {/* Icon */}
-                <div
-                  className={`w-12 h-12 rounded-xl ${bundle.bg} flex items-center justify-center text-white mb-6 shadow-md group-hover:scale-110 transition-transform duration-300`}
-                >
-                  {bundle.icon}
-                </div>
-
-                <h3 className="text-base font-bold uppercase tracking-wide mb-5 text-slate-800">
-                  {bundle.label}
-                </h3>
-
-                {/* Skill badges */}
-                <div className="flex flex-wrap gap-2">
-                  {bundle.skills.map((skill) => (
-                    <Badge key={skill} variant={bundle.badgeVariant} className="text-xs">
+              {/* Dynamic Glow Background based on category color */}
+              <div className={`absolute top-0 right-0 w-32 h-32 bg-${category.color}-500/10 rounded-full blur-[50px] group-hover:bg-${category.color}-500/20 transition-colors`}></div>
+              
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4 relative z-10">
+                {category.title}
+              </h3>
+              
+              <ul className="space-y-4 relative z-10">
+                {category.skills.map((skill, i) => (
+                  <li key={i} className="flex flex-col gap-2 group/skill cursor-default">
+                    <div className="flex justify-between items-center text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover/skill:text-indigo-600 dark:group-hover/skill:text-white transition-colors">
                       {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </Card>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

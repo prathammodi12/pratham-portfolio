@@ -1,117 +1,113 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, FileDown } from 'lucide-react';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
+import React from "react";
+import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="gradient-hero min-h-screen flex items-center pt-24 pb-20 text-white relative overflow-hidden">
-      {/* Decorative blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          animate={{ scale: [1, 1.15, 1], opacity: [0.15, 0.25, 0.15] }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute top-10 left-[-10%] w-[600px] h-[600px] bg-white/10 rounded-full blur-[100px]"
-        />
-        <div className="absolute bottom-0 right-[-5%] w-[500px] h-[500px] bg-indigo-400/20 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[140px]" />
-      </div>
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-0">
+      {/* Animated Background Blobs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob pointer-events-none"></div>
+      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-cyan-500/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000 pointer-events-none"></div>
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full">
-        <div className="max-w-4xl">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left Column: Photo Card */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="order-2 lg:order-1 relative w-full max-w-sm mx-auto lg:mx-0 lg:max-w-md"
           >
-            {/* Availability badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="text-xs font-semibold text-white/90 tracking-wide">
-                Available for opportunities
-              </span>
-              <Sparkles size={12} className="text-white/60" />
-            </div>
-
-            {/* Headline */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-7">
-              Building{' '}
-              <span className="relative inline-block">
-                Scalable
-                <motion.span
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.9, duration: 0.5 }}
-                  className="absolute -bottom-1 left-0 right-0 h-1 bg-white/30 rounded-full origin-left"
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-[32px] blur-2xl opacity-30 dark:opacity-20 animate-pulse pointer-events-none"></div>
+            <div className="relative glass-panel p-2 rounded-[32px] border-slate-200 dark:border-slate-700/50">
+              <div className="rounded-[24px] overflow-hidden bg-slate-200 dark:bg-slate-900 aspect-[3/4] relative">
+                {/* Ensure pratham-img.jpg exists in the public directory */}
+                <img
+                  src="/pratham portfolio.png"
+                  alt="Pratham Modi"
+                  className="w-full h-full object-cover object-top grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
                 />
-              </span>
-              <br />
-              <span className="text-white/50">Digital Products.</span>
-            </h1>
-
-            {/* Sub-headline */}
-            <p className="text-lg sm:text-xl md:text-2xl font-medium text-white/75 mb-10 leading-relaxed max-w-2xl">
-              I'm{' '}
-              <span className="text-white font-bold">Pratham Modi</span>, a{' '}
-              <span className="text-blue-200 font-semibold">Java Full Stack Developer</span> specialising
-              in enterprise backend architecture and elegant React frontends.
-            </p>
-
-            {/* Skill badges */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              {['Java', 'Spring Boot', 'React', 'Liferay', 'PostgreSQL', 'REST APIs'].map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 border border-white/20 text-white/80 backdrop-blur-sm"
-                >
-                  {tag}
-                </span>
-              ))}
+                <div className="absolute bottom-4 left-4 right-4 glass-panel p-4 rounded-2xl border-white/20">
+                  <p className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-widest mb-1 opacity-70">
+                    Focus Areas
+                  </p>
+                  <p className="text-sm font-semibold text-slate-900 dark:text-slate-200">
+                    Full Stack Engineering • Architecture • Modern UI
+                  </p>
+                </div>
+              </div>
             </div>
+          </motion.div>
+
+          {/* Right Column: Text & CTAs */}
+          <motion.div className="order-1 lg:order-2 flex flex-col items-center text-center lg:items-start lg:text-left">
+            {/* Top Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel mb-8 border-slate-200 dark:border-indigo-500/30"
+            >
+              <span className="w-2 h-2 rounded-full bg-indigo-500 dark:bg-cyan-400 animate-pulse"></span>
+              <span className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-widest">
+                Available for hire
+              </span>
+            </motion.div>
+
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 text-slate-900 dark:text-white"
+            >
+              Building{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-cyan-400">
+                scalable and reliable
+              </span>{" "}
+              systems.
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg text-slate-600 dark:text-slate-400 font-medium max-w-xl mb-10 leading-relaxed"
+            >
+              I’m{" "}
+              <span className="text-slate-900 dark:text-white font-semibold">
+                Pratham Modi
+              </span>
+              , a Java Full Stack Developer dedicated to crafting resilient
+              backend architectures and integrating them into modern,
+              data-driven web applications.
+            </motion.p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Button asChild variant="white" size="xl" className="font-bold">
-                <a href="#projects">
-                  View My Work <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
-              <Button asChild variant="outline-white" size="xl" className="font-bold">
-                <a href="#contact">Get in Touch</a>
-              </Button>
-              <Button asChild variant="outline-white" size="xl" className="font-bold">
-                <a href="/resume.pdf" download="Pratham_Modi_Resume.pdf">
-                  <FileDown size={18} /> Download Resume
-                </a>
-              </Button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-4"
+            >
+              <a
+                href="#projects"
+                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-bold transition-all hover:-translate-y-1 shadow-lg shadow-indigo-500/25"
+              >
+                View Projects <ArrowRight size={20} />
+              </a>
+              <a
+                href="/resume.pdf"
+                download="Pratham_Modi_Resume.pdf"
+                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-white font-bold transition-all hover:-translate-y-1"
+              >
+                Resume <Download size={20} />
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.6 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/50">
-          Scroll
-        </span>
-        <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent" />
-      </motion.div>
     </section>
   );
 };

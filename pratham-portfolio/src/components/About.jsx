@@ -1,89 +1,136 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Card, CardContent } from './ui/card';
-import { Badge } from './ui/badge';
-import { GraduationCap, Lightbulb, MapPin } from 'lucide-react';
-
-const stats = [
-  { value: '1', label: 'Live Platform' },
-  { value: '6+', label: 'Months Exp.' },
-  { value: '10+', label: 'APIs Built' },
-];
+import React from "react";
+import { motion } from "framer-motion";
+import { Code2, Target, Zap, Server } from "lucide-react";
 
 const About = () => {
   return (
-    <section id="about" className="bg-white border-b border-border">
-      <div className="section-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          {/* Left column */}
+    <section id="about" className="py-32 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:col-span-5 space-y-8"
           >
-            <span className="section-label">About Me</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
-              Engineering{' '}
-              <span className="text-primary">excellence</span>{' '}
-              through technical depth.
-            </h2>
+            <div>
+              <span className="text-cyan-400 font-bold tracking-widest text-sm uppercase flex items-center gap-2 mb-4">
+                <span className="w-8 h-[2px] bg-cyan-400"></span> Profile
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
+                Engineering{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-cyan-500 dark:from-indigo-400 dark:to-cyan-400">
+                  Excellence
+                </span>
+                .
+              </h2>
+            </div>
 
-            {/* Stats row */}
-            <div className="flex flex-wrap gap-4 mt-8">
-              {stats.map((s) => (
-                <Card key={s.label} className="flex-1 min-w-[100px] text-center py-5 px-4 hover:border-primary/40 hover:shadow-lg transition-all">
-                  <p className="text-3xl font-black text-primary leading-none mb-1">{s.value}</p>
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{s.label}</p>
-                </Card>
+            <p className="text-slate-400 text-lg leading-relaxed">
+              I am a results-driven Java Full Stack Developer with a specialized
+              focus on enterprise-grade software development and system
+              integration. My core philosophy revolves around creating backend
+              architectures that are as reliable as they are scalable.
+            </p>
+
+            {/* Quick Stats Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  val: "6+",
+                  label: "Months Exp",
+                  icon: <Target size={18} className="text-indigo-400" />,
+                },
+                {
+                  val: "10+",
+                  label: "APIs Built",
+                  icon: <Zap size={18} className="text-cyan-400" />,
+                },
+                {
+                  val: "01",
+                  label: "Live Project",
+                  icon: <Server size={18} className="text-purple-400" />,
+                },
+                {
+                  val: "100%",
+                  label: "Delivery",
+                  icon: <Code2 size={18} className="text-blue-400" />,
+                },
+              ].map((stat, i) => (
+                <div
+                  key={i}
+                  className="glass-panel p-5 rounded-2xl flex flex-col gap-2 hover:bg-slate-800/80 transition-colors"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-3xl font-black text-slate-900 dark:text-white">
+                      {stat.val}
+                    </span>
+                    {stat.icon}
+                  </div>
+                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                    {stat.label}
+                  </span>
+                </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right column */}
+          {/* Cards Layout */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="space-y-6"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 grid gap-6"
           >
-            <p className="text-lg text-slate-600 leading-relaxed">
-              I'm a results-driven{' '}
-              <span className="font-bold text-slate-900">Java Full Stack Developer</span>{' '}
-              focused on enterprise-grade software development and seamless system integration.
-            </p>
-            <p className="text-base text-slate-500 leading-relaxed">
-              At <span className="font-bold text-primary">7Span</span>, I played a pivotal role in
-              engineering <strong>Zeveal</strong> — a mission-critical workforce tracking platform —
-              spanning backend entities, REST APIs, and polished React dashboards.
-            </p>
-            <p className="text-base text-slate-500 leading-relaxed">
-              I specialise in bridging complex backend logic with seamless user workflows,
-              ensuring every line of code contributes to a scalable enterprise ecosystem.
-            </p>
+            {/* Education Card */}
+            <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  📚
+                </div>
+                Academic Background
+              </h3>
+              <div className="pl-14">
+                <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">
+                  LDRP Institute of Technology and Research
+                </h4>
+                <p className="text-slate-500 dark:text-slate-400 mb-2">
+                  B.E. in Computer Engineering
+                </p>
+                <div className="inline-block px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-xs font-semibold text-slate-800 dark:text-slate-300">
+                  CGPA: 8.5
+                </div>
+              </div>
+            </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-border">
-              <Card className="p-5 hover:border-primary/30 hover:shadow-md transition-all">
-                <div className="flex items-center gap-3 mb-3">
-                  <GraduationCap size={18} className="text-primary" />
-                  <h4 className="text-sm font-bold uppercase tracking-wide">Education</h4>
+            {/* Core Domain Card */}
+            <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                  ⚙️
                 </div>
-                <p className="text-sm font-semibold text-slate-700">LDRP Institute of Technology</p>
-                <p className="text-xs text-muted-foreground mt-1">Computer Engineering</p>
-              </Card>
-
-              <Card className="p-5 hover:border-primary/30 hover:shadow-md transition-all">
-                <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb size={18} className="text-primary" />
-                  <h4 className="text-sm font-bold uppercase tracking-wide">Key Expertise</h4>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {['System Architecture', 'API Engineering', 'React UI'].map((t) => (
-                    <Badge key={t} variant="blue">{t}</Badge>
-                  ))}
-                </div>
-              </Card>
+                Core Domain
+              </h3>
+              <ul className="pl-14 space-y-3">
+                {[
+                  "System Architecture & API Engineering",
+                  "Monolithic & Microservices Conversion",
+                  "Frontend System Integration (React)",
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 text-slate-600 dark:text-slate-300"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>

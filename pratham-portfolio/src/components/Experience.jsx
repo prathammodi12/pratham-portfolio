@@ -1,113 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Calendar } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
-import { Badge } from './ui/badge';
-
-const responsibilities = [
-  {
-    title: 'Architected Backend Entities',
-    desc: 'Leveraged Liferay Service Builder to design scalable relational data structures for workforce management.',
-  },
-  {
-    title: 'Engineered REST APIs',
-    desc: 'Built robust, versioned endpoints via Liferay REST Builder for high-fidelity frontend data communication.',
-  },
-  {
-    title: 'Frontend System Integration',
-    desc: 'Seamlessly integrated React.js components within Liferay, prioritising UX fluidity and performance.',
-  },
-  {
-    title: 'Security & RBAC',
-    desc: 'Implemented permission-based access control across Departments, Work Logs, and Notifications.',
-  },
-];
+import { Briefcase, ArrowRight } from 'lucide-react';
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-slate-50/60 border-y border-border">
-      <div className="section-container">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="section-label">Career Path</span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-            Professional Tenure.
+    <section id="experience" className="py-32 relative">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        
+        <div className="text-center mb-20">
+          <span className="text-indigo-400 font-bold tracking-widest text-sm uppercase mb-4 block">Professional Tenure</span>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white glow-text">
+            Career <span className="text-slate-500 italic">Timeline</span>.
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Real-world experience building enterprise software at speed.
-          </p>
         </div>
 
-        {/* Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-5 md:left-8 top-0 bottom-0 w-px bg-border" />
+        {/* Vertical Timeline container */}
+        <div className="relative border-l border-slate-300 dark:border-slate-800 ml-4 md:ml-0 md:pl-10 space-y-16">
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            {/* Timeline node */}
+            <div className="absolute -left-[54px] md:-left-[60px] top-6 w-5 h-5 rounded-full bg-slate-950 border-4 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.6)]"></div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative pl-16 md:pl-24"
-            >
-              {/* Timeline dot */}
-              <div className="absolute left-3 md:left-5.5 top-6 w-5 h-5 rounded-full bg-primary border-4 border-white shadow-md" />
+            <div className="glass-panel p-8 md:p-10 rounded-3xl group hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] group-hover:bg-indigo-500/10 transition-colors"></div>
+              
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                    <Briefcase size={24} className="text-indigo-600 dark:text-indigo-400" /> Java Full Stack Developer
+                  </h3>
+                  <p className="text-indigo-400 font-bold tracking-widest text-xs uppercase">Internship</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-slate-800 dark:text-slate-100 font-bold text-lg">7Span Pvt. Ltd</p>
+                  <p className="text-slate-500 text-sm font-semibold">Oct 2025 – March 2026</p>
+                </div>
+              </div>
 
-              <Card className="overflow-hidden hover:shadow-xl transition-all duration-500">
-                {/* Card top bar */}
-                <div className="h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500" />
+              <div className="space-y-6">
+                <div className="glass-panel bg-white/50 dark:bg-slate-800/20 p-5 rounded-2xl border-slate-200 dark:border-none">
+                  <h4 className="text-slate-900 dark:text-white font-bold mb-2 flex items-center gap-2">
+                    <ArrowRight size={16} className="text-indigo-500 dark:text-cyan-400" /> Architected Backend Entities
+                  </h4>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed pl-6">
+                    Leveraged Liferay Service Builder to design and implement highly scalable relational data structures governing workflows.
+                  </p>
+                </div>
+                <div className="glass-panel bg-white/50 dark:bg-slate-800/20 p-5 rounded-2xl border-slate-200 dark:border-none">
+                  <h4 className="text-slate-900 dark:text-white font-bold mb-2 flex items-center gap-2">
+                    <ArrowRight size={16} className="text-indigo-500 dark:text-cyan-400" /> Engineered REST APIs
+                  </h4>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed pl-6">
+                    Directed the creation of robust, versioned endpoints using Liferay REST Builder for high-fidelity frontend communication.
+                  </p>
+                </div>
+                <div className="glass-panel bg-white/50 dark:bg-slate-800/20 p-5 rounded-2xl border-slate-200 dark:border-none">
+                  <h4 className="text-slate-900 dark:text-white font-bold mb-2 flex items-center gap-2">
+                    <ArrowRight size={16} className="text-indigo-500 dark:text-cyan-400" /> Frontend System Integration
+                  </h4>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed pl-6">
+                    Orchestrated the seamless integration of React.js components within the Liferay environment, prioritizing UX fluidity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-                <CardHeader className="pb-4">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                    <div>
-                      <CardTitle className="text-2xl font-black">7Span Pvt. Ltd.</CardTitle>
-                      <CardDescription className="mt-1 flex flex-wrap items-center gap-3 text-sm">
-                        <span className="flex items-center gap-1">
-                          <MapPin size={13} /> Ahmedabad, India
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Calendar size={13} /> Oct 2025 – Mar 2026
-                        </span>
-                      </CardDescription>
-                    </div>
-                    <div className="flex flex-col items-start sm:items-end gap-2">
-                      <Badge variant="blue" className="text-xs">Java Full Stack Developer</Badge>
-                      <Badge variant="slate" className="text-xs">Internship</Badge>
-                    </div>
-                  </div>
-                </CardHeader>
-
-                <CardContent className="pt-0">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {responsibilities.map((item, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1, duration: 0.4 }}
-                        className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 hover:bg-blue-50 hover:border-blue-100 border border-transparent transition-all duration-200"
-                      >
-                        <div className="w-2 h-2 rounded-full bg-primary mt-2 shrink-0" />
-                        <div>
-                          <p className="text-sm font-bold text-slate-800">{item.title}</p>
-                          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{item.desc}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-
-                  {/* Tech stack row */}
-                  <div className="flex flex-wrap gap-2 mt-5 pt-5 border-t border-border">
-                    {['Java', 'Liferay', 'Spring Boot', 'React.js', 'PostgreSQL', 'REST Builder', 'Git'].map((t) => (
-                      <Badge key={t} variant="outline">{t}</Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
         </div>
       </div>
     </section>
