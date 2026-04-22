@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -38,6 +39,7 @@ function App() {
       </main>
       <Footer />
       <SpeedInsights />
+      <Analytics />
     </div>
   );
 }
