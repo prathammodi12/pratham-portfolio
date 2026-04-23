@@ -98,7 +98,7 @@ const Hero = () => {
                 View Projects <ArrowRight size={20} />
               </a>
               <a
-                href="/resume.pdf"
+                href="/Pratham_Modi_Resume.pdf"
                 download="Pratham_Modi_Resume.pdf"
                 className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-white font-bold transition-all hover:-translate-y-1"
               >
