@@ -1,6 +1,6 @@
-import React from "react";
 import { motion } from "framer-motion";
 
+// Module-scope — stable across renders
 const skillCategories = [
   {
     title: "Backend Engine",
@@ -40,6 +40,14 @@ const skillCategories = [
   },
 ];
 
+// Tailwind purge-safe glow classes (explicit, not dynamic)
+const glowMap = {
+  indigo: "bg-indigo-500/10 group-hover:bg-indigo-500/20",
+  cyan: "bg-cyan-500/10   group-hover:bg-cyan-500/20",
+  purple: "bg-purple-500/10 group-hover:bg-purple-500/20",
+  blue: "bg-blue-500/10   group-hover:bg-blue-500/20",
+};
+
 const Skills = () => {
   return (
     <section id="skills" className="py-32 relative">
@@ -62,23 +70,23 @@ const Skills = () => {
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
               className="glass-panel p-8 rounded-[32px] hover:-translate-y-2 transition-transform duration-300 relative group overflow-hidden"
             >
-              {/* Dynamic Glow Background based on category color */}
+              {/* Purge-safe explicit glow classes */}
               <div
-                className={`absolute top-0 right-0 w-32 h-32 bg-${category.color}-500/10 rounded-full blur-[50px] group-hover:bg-${category.color}-500/20 transition-colors`}
-              ></div>
+                className={`absolute top-0 right-0 w-32 h-32 rounded-full blur-[50px] transition-colors ${glowMap[category.color]}`}
+              />
 
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 border-b border-slate-200 dark:border-slate-800 pb-4 relative z-10">
                 {category.title}
               </h3>
 
               <ul className="space-y-4 relative z-10">
-                {category.skills.map((skill, i) => (
+                {category.skills.map((skill) => (
                   <li
-                    key={i}
+                    key={skill}
                     className="flex flex-col gap-2 group/skill cursor-default"
                   >
                     <div className="flex justify-between items-center text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover/skill:text-indigo-600 dark:group-hover/skill:text-white transition-colors">

@@ -1,5 +1,4 @@
-import React from "react";
-import { Terminal } from "lucide-react";
+// No external imports needed
 
 const Footer = () => {
   return (
@@ -8,8 +7,12 @@ const Footer = () => {
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 rounded-full overflow-hidden shadow-sm flex items-center justify-center shrink-0 border border-slate-300 dark:border-slate-800">
             <img
-              src="/pratham%20style.jpeg"
+              src="/pratham%20style.webp"
               alt="PM"
+              width={32}
+              height={32}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover scale-[1.15]"
             />
           </div>

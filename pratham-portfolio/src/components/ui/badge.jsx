@@ -13,8 +13,7 @@ const badgeVariants = cva(
           "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
         outline:
           "border-border text-foreground bg-transparent hover:bg-secondary/50",
-        blue:
-          "border-transparent bg-blue-100 text-blue-700 hover:bg-blue-200",
+        blue: "border-transparent bg-blue-100 text-blue-700 hover:bg-blue-200",
         indigo:
           "border-transparent bg-indigo-100 text-indigo-700 hover:bg-indigo-200",
         emerald:
@@ -28,7 +27,7 @@ const badgeVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
 function Badge({ className, variant, ...props }) {

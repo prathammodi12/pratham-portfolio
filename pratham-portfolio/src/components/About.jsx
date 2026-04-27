@@ -1,6 +1,28 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Code2, Target, Zap, Server } from "lucide-react";
+
+const stats = [
+  {
+    val: "6+",
+    label: "Months Exp",
+    icon: <Target size={18} className="text-indigo-400" />,
+  },
+  {
+    val: "10+",
+    label: "APIs Built",
+    icon: <Zap size={18} className="text-cyan-400" />,
+  },
+  {
+    val: "01",
+    label: "Live Project",
+    icon: <Server size={18} className="text-purple-400" />,
+  },
+  {
+    val: "100%",
+    label: "Delivery",
+    icon: <Code2 size={18} className="text-blue-400" />,
+  },
+];
 
 const About = () => {
   return (
@@ -11,13 +33,13 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-5 space-y-8"
           >
             <div>
               <span className="text-cyan-400 font-bold tracking-widest text-sm uppercase flex items-center gap-2 mb-4">
-                <span className="w-8 h-[2px] bg-cyan-400"></span> Profile
+                <span className="w-8 h-[2px] bg-cyan-400" /> Profile
               </span>
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white">
                 Engineering{" "}
@@ -37,28 +59,7 @@ const About = () => {
 
             {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 gap-4">
-              {[
-                {
-                  val: "6+",
-                  label: "Months Exp",
-                  icon: <Target size={18} className="text-indigo-400" />,
-                },
-                {
-                  val: "10+",
-                  label: "APIs Built",
-                  icon: <Zap size={18} className="text-cyan-400" />,
-                },
-                {
-                  val: "01",
-                  label: "Live Project",
-                  icon: <Server size={18} className="text-purple-400" />,
-                },
-                {
-                  val: "100%",
-                  label: "Delivery",
-                  icon: <Code2 size={18} className="text-blue-400" />,
-                },
-              ].map((stat, i) => (
+              {stats.map((stat, i) => (
                 <div
                   key={i}
                   className="glass-panel p-5 rounded-2xl flex flex-col gap-2 hover:bg-slate-800/80 transition-colors"
@@ -81,13 +82,13 @@ const About = () => {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 grid gap-6"
           >
             {/* Education Card */}
             <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
                   📚
@@ -109,7 +110,7 @@ const About = () => {
 
             {/* Core Domain Card */}
             <div className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400">
                   ⚙️
@@ -126,7 +127,7 @@ const About = () => {
                     key={i}
                     className="flex items-center gap-3 text-slate-600 dark:text-slate-300"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                     {item}
                   </li>
                 ))}

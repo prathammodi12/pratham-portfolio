@@ -8,7 +8,11 @@ html {
 
 body {
   @apply bg-slate-100 text-slate-900 dark:bg-[#0a0a0a] dark:text-slate-100 antialiased overflow-x-hidden;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 /* Premium SaaS utility classes */
