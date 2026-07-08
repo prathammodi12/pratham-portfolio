@@ -8,17 +8,17 @@ export const experiences: ExperienceItem[] = [
     duration: "May 2026 – Present",
     details: [
       {
-        title: "Microservices & API Engineering",
-        desc: "Designed and implemented robust REST APIs using Spring Boot and Java to streamline health-science data exchange and workflow management.",
+        title: "Core Backend & API Development",
+        desc: "Designed and implemented robust Java REST APIs to streamline health-science data exchange and workflow management.",
       },
       {
-        title: "System Integration & Performance",
-        desc: "Integrated responsive React frontend clients with secure backend endpoints while optimizing SQL relational database query latency.",
+        title: "Frontend Integration & SQL Optimization",
+        desc: "Orchestrated seamless integration of responsive React frontend components with Java endpoints while optimizing SQL relational queries.",
       },
     ],
   },
   {
-    role: "Java Full Stack Developer",
+    role: "Java Full Stack Intern",
     type: "Internship",
     company: "7Span Pvt. Ltd",
     duration: "Oct 2025 – March 2026",
