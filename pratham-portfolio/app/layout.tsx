@@ -14,12 +14,37 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Pratham Modi",
+    jobTitle: "Java Full Stack Developer",
+    url: "https://pratham-portfolio-gamma.vercel.app",
+    sameAs: [
+      "https://linkedin.com/in/prathammodi-",
+      "https://github.com/prathammodi12",
+    ],
+    knowsAbout: [
+      "Java SE/EE",
+      "Spring Boot",
+      "Liferay Portal",
+      "React.js",
+      "PostgreSQL",
+      "Microservices Architecture",
+      "System Integration",
+    ],
+  };
+
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans`} suppressHydrationWarning>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>

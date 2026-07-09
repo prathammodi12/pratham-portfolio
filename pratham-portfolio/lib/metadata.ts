@@ -1,8 +1,12 @@
 import { Metadata, Viewport } from "next";
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://pratham-portfolio-gamma.vercel.app";
+
 export const siteMetadata: Metadata = {
   title: "Pratham Modi - Java Full Stack Developer",
-  description: "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+  description:
+    "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
   keywords: [
     "Pratham Modi",
     "Java Full Stack Developer",
@@ -14,7 +18,10 @@ export const siteMetadata: Metadata = {
   ],
   authors: [{ name: "Pratham Modi" }],
   creator: "Pratham Modi",
-  metadataBase: new URL("https://github.com/prathammodi12"),
+  metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       {
@@ -39,7 +46,8 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     url: "/",
     title: "Pratham Modi - Java Full Stack Developer",
-    description: "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+    description:
+      "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
     siteName: "Pratham Modi Portfolio",
     images: [
       {
@@ -53,7 +61,8 @@ export const siteMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Pratham Modi - Java Full Stack Developer",
-    description: "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+    description:
+      "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
     images: ["/pratham portfolio.webp"],
   },
 };

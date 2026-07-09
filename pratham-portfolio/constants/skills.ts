@@ -5,10 +5,9 @@ export const skillCategories: SkillCategory[] = [
     title: "Backend Engine",
     color: "indigo",
     skills: [
-      "Java SE/EE",
+      "Java",
       "Spring Boot",
-      "Liferay Portal OSGI modules",
-      "Microservices Architecture",
+      "Liferay Portal"
     ],
   },
   {
@@ -25,13 +24,13 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Database Architecture",
     color: "purple",
-    skills: ["PostgreSQL", "MySQL", "MongoDB"],
+    skills: ["PostgreSQL", "MySQL"],
   },
   {
     title: "Developer Toolchain",
     color: "blue",
     skills: [
-      "Git/GitHub Ops",
+      "Git & GitHub",
       "Postman API Design",
       "Antigravity",
       "IntelliJ IDEA",

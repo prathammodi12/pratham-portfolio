@@ -79,7 +79,7 @@ export default function Navbar() {
                 href="#contact"
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-500/25"
               >
-                Hire Me <ChevronRight size={16} />
+                Contact Me <ChevronRight size={16} />
               </a>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Navbar() {
                     className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 text-white text-base font-semibold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Hire Me <ChevronRight size={18} />
+                    Contact Me <ChevronRight size={18} />
                   </a>
                 </div>
               </div>
