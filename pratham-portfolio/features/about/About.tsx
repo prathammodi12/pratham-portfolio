@@ -124,7 +124,7 @@ export default function About() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Badge variant="secondary" className="px-3 py-1 font-semibold text-slate-800 dark:text-slate-300">
-                    CGPA: 8.6
+                    CGPA: 8.65
                   </Badge>
                   <Badge variant="secondary" className="px-3 py-1 font-semibold text-slate-800 dark:text-slate-300">
                     Graduated 2026
