@@ -8,13 +8,13 @@
   Regenerate with:  npm run resume
 -->
 <style>
-  @page { size: A4; margin: 8mm 12mm; }
+  @page { size: A4; margin: 9mm 13mm; }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: Calibri, "Segoe UI", Arial, sans-serif;
-    font-size: 9.8pt;
-    line-height: 1.22;
+    font-size: 10pt;
+    line-height: 1.27;
     color: #1f2328;
   }
   a { color: #1d4ed8; text-decoration: none; }
@@ -27,10 +27,10 @@
   h2 {
     font-size: 11pt; text-transform: uppercase; letter-spacing: 1px;
     color: #1e3a8a; border-bottom: 1.2px solid #1e3a8a;
-    margin: 7px 0 4px; padding-bottom: 1px;
+    margin: 8px 0 4px; padding-bottom: 1px;
   }
   p { margin: 0; }
-  .entry { margin-bottom: 4px; break-inside: avoid; }
+  .entry { margin-bottom: 6px; break-inside: avoid; }
   .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
   .title { font-weight: 700; color: #111827; }
   .sub { font-style: italic; color: #374151; }
@@ -40,6 +40,11 @@
   .tech { font-size: 9.6pt; color: #374151; margin-top: 1px; }
   .tech b { color: #1f2328; }
   .skills p { margin: 1.5px 0; }
+  .projects .group { font-weight: 700; color: #1e3a8a; font-size: 9.6pt; margin: 3px 0 1px; }
+  .proj { margin: 1.5px 0 1.5px 10px; }
+  .stack { color: #4b5563; font-style: italic; }
+  .stack::before { content: "("; } .stack::after { content: ")"; }
+  h2 + ul { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -59,11 +64,18 @@
 <h2>Summary</h2>
 <p>
   Java Full Stack Developer with 1+ year of experience building and supporting enterprise applications
-  with Spring Boot, React/Next.js and MySQL. At Topia Life Science I develop and maintain regulated
-  pharma platforms: a multi-tenant Quality Management System (QMS) and a controlled Document Management
-  System (DMS), both now in production, for which I also handle maintenance and support. Skilled in
-  REST APIs, Spring Security/JWT, role-based access control, JasperReports and AWS S3.
+  with Spring Boot, React/Next.js and MySQL. At Topia Life Science I develop and maintain two regulated
+  pharma platforms in production, a multi-tenant Quality Management System (QMS) and a controlled Document
+  Management System (DMS). Skilled in REST APIs, Spring Security/JWT, RBAC,
+  JasperReports and AWS S3.
 </p>
+
+<h2>Key Achievements</h2>
+<ul>
+  <li>Went from intern to full-time developer, and within six months took on production maintenance and support for two regulated pharma platforms (QMS and DMS).</li>
+  <li>Shipped <b>500+ commits across 10+ repositories</b> in six months on Spring Boot, JSP and Next.js codebases.</li>
+  <li>Published <b>mysql-schema-lens</b>, an open-source npm package (MCP server) that gives AI coding agents offline access to MySQL schemas.</li>
+</ul>
 
 <h2>Experience</h2>
 
@@ -71,11 +83,11 @@
   <div class="row"><span class="title">Java Full Stack Developer</span><span class="date">May 2026 – Present</span></div>
   <div class="row"><span class="sub">Topia Life Science, Vadodara, Gujarat</span><span class="date">Full-time</span></div>
   <ul>
-    <li>Develop modules for a multi-tenant pharma <b>QMS</b> (CAPA, Audit, Deviation, Change Control, Complaints, Training, Calendar) on Spring Boot, JSP and MySQL.</li>
-    <li>Build backend and frontend for a controlled <b>DMS</b>: authoring, QA approval, release, next-version, print tracking, document return, archival and discontinuation flows.</li>
+    <li>Built and extended <b>8 modules</b> of a multi-tenant pharma <b>QMS</b> (CAPA, Audit, Deviation, Change Control, Complaints, Training, Calendar, Dashboard), including a quality calendar with recurring events and reminders.</li>
+    <li>Developed backend and frontend of a controlled <b>DMS</b> (Spring Boot microservice with Eureka, Next.js UI): authoring, QA approval, release, print tracking with batch returns, archival and discontinuation flows.</li>
     <li>Handle <b>maintenance and support</b> for QMS and DMS in production: resolve user-reported issues, fix bugs, optimise queries and ship enhancements to live client environments.</li>
-    <li>Secure Spring Boot services with JWT (including refresh tokens), role and permission management, signed S3 file links and module-level permission checks. Fixed an SQL injection vulnerability.</li>
-    <li>Automate reporting with dynamic JasperReports PDFs and scheduled email summaries with Excel exports. Build permission-gated Next.js / TypeScript screens with React Query.</li>
+    <li>Secured services with JWT refresh tokens, role and permission management, signed S3 file links and module-level permission checks. Found and fixed an SQL injection vulnerability.</li>
+    <li>Automated reporting: dynamic JasperReports PDFs for 5 quality record types and scheduled weekly, monthly and quarterly email summaries with Excel exports.</li>
   </ul>
 </div>
 
@@ -90,45 +102,14 @@
 </div>
 
 <h2>Projects</h2>
-
-<div class="entry">
-  <div class="row"><span class="title">Pharma Quality Management System (QMS)</span><span class="date">Topia Life Science</span></div>
-  <ul>
-    <li>Built a quality calendar with recurrence logic and reminders, dynamic PDF reports for CAPA, Audit, Deviation, Change Control and Complaints, and tenant-aware training allocation. Currently in maintenance and support.</li>
-  </ul>
-  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, JSP, MySQL, JasperReports, Apache POI, AWS S3</div>
-</div>
-
-<div class="entry">
-  <div class="row"><span class="title">Controlled Document Management System (DMS)</span><span class="date">Topia Life Science</span></div>
-  <ul>
-    <li>Spring Boot microservice (Eureka) and Next.js frontend for SOP lifecycle management, with stage-wise email notifications, report schedulers, print-job tracking with batch returns, and a uniform paginated API structure. Currently in maintenance and support.</li>
-  </ul>
-  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Cloud Eureka, MySQL, Flyway, AWS S3, JWT, Next.js, TypeScript, React Query</div>
-</div>
-
-<div class="entry">
-  <div class="row"><span class="title">Molecular Modelling Platform (Drug Discovery)</span><span class="date">Topia Life Science</span></div>
-  <ul>
-    <li>Built the role and permission management module, role-based authentication and JWT auto-refresh. Integrated the Ketcher molecule editor and delivered the TCP profiling, QSAR, ADMET and MPO evaluation screens.</li>
-  </ul>
-  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, JWT, JSP, MySQL, AWS S3</div>
-</div>
-
-<div class="entry">
-  <div class="row"><span class="title">E-commerce Admin &amp; Storefront APIs</span><span class="date">Topia Life Science</span></div>
-  <ul>
-    <li>Admin dashboard, product, order, payment and refund APIs with invoice emails; customer JWT auth, addresses, product listing and S3 presigned uploads.</li>
-  </ul>
-  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, MySQL, Flyway, AWS S3, Swagger/OpenAPI</div>
-</div>
-
-<div class="entry">
-  <div class="row"><span class="title">mysql-schema-lens: MySQL Schema MCP Server</span><span class="date"><a href="https://www.npmjs.com/package/mysql-schema-lens">npmjs.com/package/mysql-schema-lens</a></span></div>
-  <ul>
-    <li>Open-source npm package that gives AI coding agents cached, offline access to a MySQL schema over MCP or the CLI: 17 tools, fingerprint-based refresh, and inference of undeclared relationships.</li>
-  </ul>
-  <div class="tech"><b>Tech:</b> TypeScript, Node.js, MCP SDK, MySQL, Zod, Vitest</div>
+<div class="projects">
+  <p class="group">At Topia Life Science</p>
+  <div class="proj"><div class="row"><span><b>Pharma QMS</b>: CAPA, audits, deviations, training and calendar. <span class="stack">Spring Boot, JSP, JasperReports</span></span><span class="date">May 2026 – Present</span></div></div>
+  <div class="proj"><div class="row"><span><b>Controlled DMS</b>: SOP lifecycle with approvals, print control and archival. <span class="stack">Spring Boot, Eureka, Flyway, Next.js</span></span><span class="date">Sep 2026 – Present</span></div></div>
+  <div class="proj"><div class="row"><span><b>Drug Discovery Platform</b>: RBAC, JWT auto-refresh, Ketcher editor, QSAR/ADMET screens. <span class="stack">Spring Boot, JSP</span></span><span class="date">Jul – Nov 2026</span></div></div>
+  <div class="proj"><div class="row"><span><b>E-commerce APIs</b>: admin dashboard, orders, payments, refunds and customer auth. <span class="stack">Spring Boot, MySQL, AWS S3</span></span><span class="date">Aug – Sep 2026</span></div></div>
+  <p class="group">Open Source</p>
+  <div class="proj"><div class="row"><span><b>mysql-schema-lens</b>: MCP server with 17 tools for offline MySQL schema access. <span class="stack">TypeScript, MCP SDK</span></span><span class="date"><a href="https://www.npmjs.com/package/mysql-schema-lens">View on npm</a></span></div></div>
 </div>
 
 <h2>Technical Skills</h2>
