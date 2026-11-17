@@ -14,18 +14,18 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    val: "6+",
-    label: "Months Exp",
+    val: "1+",
+    label: "Year Exp",
     icon: <Target size={18} className="text-indigo-400" />,
   },
   {
-    val: "10+",
-    label: "APIs Built",
+    val: "500+",
+    label: "Commits Shipped",
     icon: <Zap size={18} className="text-cyan-400" />,
   },
   {
-    val: "01",
-    label: "Live Project",
+    val: "06",
+    label: "Projects Delivered",
     icon: <Server size={18} className="text-purple-400" />,
   },
   {
@@ -116,12 +116,20 @@ export default function About() {
                 <h4 className="text-lg font-bold text-slate-800 dark:text-slate-200">
                   LDRP Institute of Technology and Research
                 </h4>
-                <p className="text-slate-500 dark:text-slate-400 mb-2">
-                  B.E. in Computer Engineering
+                <p className="text-slate-500 dark:text-slate-400 mb-1">
+                  Bachelor of Engineering (B.E.) in Computer Engineering
                 </p>
-                <Badge variant="secondary" className="px-3 py-1 font-semibold text-slate-800 dark:text-slate-300">
-                  CGPA: 8.5
-                </Badge>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                  Kadi Sarva Vishwavidyalaya (KSV), Gandhinagar &middot; 2022 – 2026
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="px-3 py-1 font-semibold text-slate-800 dark:text-slate-300">
+                    CGPA: 8.6
+                  </Badge>
+                  <Badge variant="secondary" className="px-3 py-1 font-semibold text-slate-800 dark:text-slate-300">
+                    Graduated 2026
+                  </Badge>
+                </div>
               </div>
             </Card>
 
@@ -137,8 +145,9 @@ export default function About() {
               <ul className="pl-14 space-y-3">
                 {[
                   "System Architecture & API Engineering",
-                  "Monolithic & Microservices Conversion",
-                  "Frontend System Integration (React)",
+                  "Spring Boot Microservices & Security (JWT, RBAC)",
+                  "Regulated Pharma Systems (QMS, DMS)",
+                  "Frontend System Integration (React, Next.js)",
                 ].map((item, i) => (
                   <li
                     key={i}

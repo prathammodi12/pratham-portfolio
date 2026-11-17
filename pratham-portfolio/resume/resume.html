@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pratham Modi - Java Full Stack Developer - Resume</title>
+<!--
+  Source for public/Pratham_Modi_Resume.pdf.
+  Regenerate with:  npm run resume
+-->
+<style>
+  @page { size: A4; margin: 8mm 12mm; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    font-size: 9.8pt;
+    line-height: 1.22;
+    color: #1f2328;
+  }
+  a { color: #1d4ed8; text-decoration: none; }
+  header { text-align: center; margin-bottom: 8px; }
+  h1 { font-size: 21pt; margin: 0; letter-spacing: 0.5px; color: #111827; }
+  .role { font-size: 11.5pt; font-weight: 600; color: #374151; margin: 2px 0 4px; }
+  .contact { font-size: 9.6pt; color: #374151; }
+  .contact span + span::before { content: "  |  "; color: #9ca3af; white-space: pre; }
+  h2 {
+    font-size: 11pt; text-transform: uppercase; letter-spacing: 1px;
+    color: #1e3a8a; border-bottom: 1.2px solid #1e3a8a;
+    margin: 7px 0 4px; padding-bottom: 1px;
+  }
+  p { margin: 0; }
+  .entry { margin-bottom: 4px; break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .title { font-weight: 700; color: #111827; }
+  .sub { font-style: italic; color: #374151; }
+  .date { font-weight: 600; color: #374151; white-space: nowrap; font-size: 9.8pt; }
+  ul { margin: 2px 0 0; padding-left: 15px; }
+  li { margin: 1px 0; }
+  .tech { font-size: 9.6pt; color: #374151; margin-top: 1px; }
+  .tech b { color: #1f2328; }
+  .skills p { margin: 1.5px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Pratham Modi</h1>
+  <div class="role">Java Full Stack Developer</div>
+  <div class="contact">
+    <span><a href="tel:+917043822868">+91 70438 22868</a></span>
+    <span><a href="mailto:prathammodi17@gmail.com">prathammodi17@gmail.com</a></span>
+    <span><a href="https://www.linkedin.com/in/prathammodi-">linkedin.com/in/prathammodi-</a></span>
+    <span><a href="https://github.com/prathammodi12">github.com/prathammodi12</a></span>
+    <span><a href="https://pratham-portfolio-gamma.vercel.app/">Portfolio</a></span>
+  </div>
+</header>
+
+<h2>Summary</h2>
+<p>
+  Java Full Stack Developer with 1+ year of experience building and supporting enterprise applications
+  with Spring Boot, React/Next.js and MySQL. At Topia Life Science I develop and maintain regulated
+  pharma platforms: a multi-tenant Quality Management System (QMS) and a controlled Document Management
+  System (DMS), both now in production, for which I also handle maintenance and support. Skilled in
+  REST APIs, Spring Security/JWT, role-based access control, JasperReports and AWS S3.
+</p>
+
+<h2>Experience</h2>
+
+<div class="entry">
+  <div class="row"><span class="title">Java Full Stack Developer</span><span class="date">May 2026 – Present</span></div>
+  <div class="row"><span class="sub">Topia Life Science, Vadodara, Gujarat</span><span class="date">Full-time</span></div>
+  <ul>
+    <li>Develop modules for a multi-tenant pharma <b>QMS</b> (CAPA, Audit, Deviation, Change Control, Complaints, Training, Calendar) on Spring Boot, JSP and MySQL.</li>
+    <li>Build backend and frontend for a controlled <b>DMS</b>: authoring, QA approval, release, next-version, print tracking, document return, archival and discontinuation flows.</li>
+    <li>Handle <b>maintenance and support</b> for QMS and DMS in production: resolve user-reported issues, fix bugs, optimise queries and ship enhancements to live client environments.</li>
+    <li>Secure Spring Boot services with JWT (including refresh tokens), role and permission management, signed S3 file links and module-level permission checks. Fixed an SQL injection vulnerability.</li>
+    <li>Automate reporting with dynamic JasperReports PDFs and scheduled email summaries with Excel exports. Build permission-gated Next.js / TypeScript screens with React Query.</li>
+  </ul>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="title">Java Full Stack Developer Intern</span><span class="date">Oct 2025 – Mar 2026</span></div>
+  <div class="row"><span class="sub">7Span Pvt. Ltd, Ahmedabad, Gujarat</span><span class="date">Internship</span></div>
+  <ul>
+    <li>Contributed to <b>Zeveal</b>, a live workforce tracking platform that monitors remote employee productivity (work sessions, idle time, break logs).</li>
+    <li>Built backend modules with Liferay Service Builder (Employee, Department, Work Logs, Notifications) and APIs with Liferay REST Builder (OAuth2, CORS).</li>
+    <li>Developed React.js dashboards inside Liferay and implemented role-based access control with Liferay permissions.</li>
+  </ul>
+</div>
+
+<h2>Projects</h2>
+
+<div class="entry">
+  <div class="row"><span class="title">Pharma Quality Management System (QMS)</span><span class="date">Topia Life Science</span></div>
+  <ul>
+    <li>Built a quality calendar with recurrence logic and reminders, dynamic PDF reports for CAPA, Audit, Deviation, Change Control and Complaints, and tenant-aware training allocation. Currently in maintenance and support.</li>
+  </ul>
+  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, JSP, MySQL, JasperReports, Apache POI, AWS S3</div>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="title">Controlled Document Management System (DMS)</span><span class="date">Topia Life Science</span></div>
+  <ul>
+    <li>Spring Boot microservice (Eureka) and Next.js frontend for SOP lifecycle management, with stage-wise email notifications, report schedulers, print-job tracking with batch returns, and a uniform paginated API structure. Currently in maintenance and support.</li>
+  </ul>
+  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Cloud Eureka, MySQL, Flyway, AWS S3, JWT, Next.js, TypeScript, React Query</div>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="title">Molecular Modelling Platform (Drug Discovery)</span><span class="date">Topia Life Science</span></div>
+  <ul>
+    <li>Built the role and permission management module, role-based authentication and JWT auto-refresh. Integrated the Ketcher molecule editor and delivered the TCP profiling, QSAR, ADMET and MPO evaluation screens.</li>
+  </ul>
+  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, JWT, JSP, MySQL, AWS S3</div>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="title">E-commerce Admin &amp; Storefront APIs</span><span class="date">Topia Life Science</span></div>
+  <ul>
+    <li>Admin dashboard, product, order, payment and refund APIs with invoice emails; customer JWT auth, addresses, product listing and S3 presigned uploads.</li>
+  </ul>
+  <div class="tech"><b>Tech:</b> Java, Spring Boot, Spring Security, MySQL, Flyway, AWS S3, Swagger/OpenAPI</div>
+</div>
+
+<div class="entry">
+  <div class="row"><span class="title">mysql-schema-lens: MySQL Schema MCP Server</span><span class="date"><a href="https://www.npmjs.com/package/mysql-schema-lens">npmjs.com/package/mysql-schema-lens</a></span></div>
+  <ul>
+    <li>Open-source npm package that gives AI coding agents cached, offline access to a MySQL schema over MCP or the CLI: 17 tools, fingerprint-based refresh, and inference of undeclared relationships.</li>
+  </ul>
+  <div class="tech"><b>Tech:</b> TypeScript, Node.js, MCP SDK, MySQL, Zod, Vitest</div>
+</div>
+
+<h2>Technical Skills</h2>
+<div class="skills">
+  <p><b>Backend:</b> Java, Spring Boot, Spring Security, JWT, Spring Cloud (Eureka), REST APIs, Swagger/OpenAPI, JasperReports, Liferay Portal</p>
+  <p><b>Frontend:</b> React.js, Next.js, TypeScript, JavaScript (ES6+), React Query, JSP, HTML5, CSS3, Tailwind CSS, Shadcn UI, MUI</p>
+  <p><b>Data &amp; Cloud:</b> MySQL, PostgreSQL, Flyway, AWS S3</p>
+  <p><b>Tools &amp; Concepts:</b> Git, Maven, Postman, IntelliJ IDEA, VS Code, MCP; OOP, microservices, RBAC, production support</p>
+</div>
+
+<h2>Education</h2>
+<div class="entry">
+  <div class="row"><span class="title">Bachelor of Engineering in Computer Engineering</span><span class="date">2022 – 2026</span></div>
+  <div class="row"><span class="sub">LDRP Institute of Technology and Research (KSV), Gandhinagar, Gujarat</span><span class="date">CGPA: 8.6</span></div>
+</div>
+
+</body>
+</html>

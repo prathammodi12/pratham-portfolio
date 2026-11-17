@@ -7,7 +7,11 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Java",
       "Spring Boot",
-      "Liferay Portal"
+      "Spring Security & JWT",
+      "Spring Cloud (Eureka)",
+      "REST APIs & Swagger",
+      "JasperReports",
+      "Liferay Portal",
     ],
   },
   {
@@ -15,16 +19,20 @@ export const skillCategories: SkillCategory[] = [
     color: "cyan",
     skills: [
       "React.js",
+      "Next.js",
+      "TypeScript",
       "Javascript (ES6+)",
+      "React Query",
+      "JSP",
       "Tailwind CSS",
       "Shadcn UI",
       "Material UI (MUI)",
     ],
   },
   {
-    title: "Database Architecture",
+    title: "Data & Cloud",
     color: "purple",
-    skills: ["PostgreSQL", "MySQL"],
+    skills: ["MySQL", "PostgreSQL", "Flyway", "AWS S3"],
   },
   {
     title: "Developer Toolchain",
@@ -32,8 +40,9 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Git & GitHub",
       "Postman API Design",
-      "Antigravity",
+      "Maven",
       "IntelliJ IDEA",
+      "MCP & AI Coding Agents",
     ],
   },
 ];

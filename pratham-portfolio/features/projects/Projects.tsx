@@ -7,6 +7,7 @@ import {
   Activity,
   Server,
   ArrowRight,
+  ExternalLink,
 } from "lucide-react";
 import { projects } from "@/constants/projects";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -16,6 +17,9 @@ import { GlassPanel } from "@/components/ui/GlassPanel";
 import { Button } from "@/components/ui/Button";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { GradientText } from "@/components/ui/GradientText";
+
+const featuredProjects = projects.filter((p) => p.featured);
+const otherProjects = projects.filter((p) => !p.featured);
 
 const iconMap = {
   database: <Database size={24} className="text-blue-500" />,
@@ -28,16 +32,17 @@ export default function Projects() {
     <section id="projects" className="py-32 relative">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <SectionTitle
-          subtitle="Featured Case Study"
+          subtitle="Featured Case Studies"
           subtitleColorClassName="text-indigo-600 dark:text-purple-400"
           title={
             <>
-              Enterprise <span className="text-slate-500 italic">Workforce.</span>
+              Enterprise <span className="text-slate-500 italic">Systems.</span>
             </>
           }
         />
 
-        {projects.map((project) => (
+        <div className="flex flex-col gap-16">
+        {featuredProjects.map((project) => (
           <ScrollReveal
             key={project.id}
             direction="up"
@@ -52,6 +57,12 @@ export default function Projects() {
                 {/* Left Column */}
                 <div className="xl:col-span-7 flex flex-col gap-10">
                   <StaggerItem>
+                    <div className="flex flex-wrap items-center gap-2 mb-5 text-xs font-bold uppercase tracking-widest">
+                      <span className="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-300">
+                        {project.context}
+                      </span>
+                      <span className="text-slate-500">{project.period}</span>
+                    </div>
                     <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-tight">
                       {project.title}{" "}
                       <span className="text-slate-400 dark:text-slate-600 font-light hidden sm:inline">
@@ -180,13 +191,23 @@ export default function Projects() {
                       asChild
                       className="w-full text-lg group/btn active:translate-y-0 active:scale-100"
                     >
-                      <a href="#contact">
-                        Contact Me{" "}
-                        <ArrowRight
-                          size={20}
-                          className="group-hover/btn:translate-x-1 transition-transform"
-                        />
-                      </a>
+                      {project.link ? (
+                        <a href={project.link.href} target="_blank" rel="noopener noreferrer">
+                          {project.link.label}{" "}
+                          <ExternalLink
+                            size={20}
+                            className="group-hover/btn:translate-x-1 transition-transform"
+                          />
+                        </a>
+                      ) : (
+                        <a href="#contact">
+                          Contact Me{" "}
+                          <ArrowRight
+                            size={20}
+                            className="group-hover/btn:translate-x-1 transition-transform"
+                          />
+                        </a>
+                      )}
                     </Button>
                   </StaggerItem>
                 </div>
@@ -194,6 +215,71 @@ export default function Projects() {
             </div>
           </ScrollReveal>
         ))}
+        </div>
+
+        {otherProjects.length > 0 && (
+          <div className="mt-24">
+            <h3 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-10">
+              More <span className="text-slate-500 italic">Projects.</span>
+            </h3>
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {otherProjects.map((project) => (
+                <StaggerItem key={project.id} className="h-full">
+                  <Card
+                    variant="glass"
+                    className="h-full p-7 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col gap-5 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors"
+                  >
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] font-bold uppercase tracking-widest">
+                      <span className="px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-200 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-300">
+                        {project.context}
+                      </span>
+                      <span className="text-slate-500">{project.period}</span>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-black text-slate-900 dark:text-white">
+                        {project.title}
+                      </h4>
+                      <p className="text-sm font-semibold text-indigo-500 dark:text-indigo-400 mt-1">
+                        {project.subtitle}
+                      </p>
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {project.impact.slice(0, 3).map((point) => (
+                        <li key={point} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+                          <CheckCircle2 size={16} className="text-indigo-500 shrink-0 mt-0.5" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2 mt-auto pt-2">
+                      {project.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {project.link && (
+                      <a
+                        href={project.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
+                      >
+                        {project.link.label} <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </Card>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        )}
       </div>
     </section>
   );

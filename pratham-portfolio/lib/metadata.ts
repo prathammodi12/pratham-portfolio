@@ -6,7 +6,7 @@ const siteUrl =
 export const siteMetadata: Metadata = {
   title: "Pratham Modi - Java Full Stack Developer",
   description:
-    "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+    "Portfolio of Pratham Modi, a Java Full Stack Developer building Spring Boot microservices, regulated pharma platforms (QMS & DMS), and React / Next.js frontends.",
   keywords: [
     "Pratham Modi",
     "Java Full Stack Developer",
@@ -47,13 +47,13 @@ export const siteMetadata: Metadata = {
     url: "/",
     title: "Pratham Modi - Java Full Stack Developer",
     description:
-      "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+      "Portfolio of Pratham Modi, a Java Full Stack Developer building Spring Boot microservices, regulated pharma platforms (QMS & DMS), and React / Next.js frontends.",
     siteName: "Pratham Modi Portfolio",
     images: [
       {
         url: "/pratham portfolio.webp",
-        width: 1200,
-        height: 630,
+        width: 1122,
+        height: 1402,
         alt: "Pratham Modi Portfolio Preview",
       },
     ],
@@ -62,7 +62,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: "Pratham Modi - Java Full Stack Developer",
     description:
-      "Portfolio of Pratham Modi, a Java Full Stack Developer specializing in Liferay, Spring Boot, and React.",
+      "Portfolio of Pratham Modi, a Java Full Stack Developer building Spring Boot microservices, regulated pharma platforms (QMS & DMS), and React / Next.js frontends.",
     images: ["/pratham portfolio.webp"],
   },
 };

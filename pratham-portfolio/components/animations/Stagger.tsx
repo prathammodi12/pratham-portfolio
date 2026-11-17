@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 interface StaggerContainerProps {
   children: React.ReactNode;
@@ -35,7 +35,7 @@ export function StaggerContainer({
   };
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
@@ -45,7 +45,7 @@ export function StaggerContainer({
       style={style}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -70,13 +70,13 @@ export function StaggerItem({ children, className, id, style }: StaggerItemProps
   };
 
   return (
-    <motion.div
+    <m.div
       variants={itemVariants}
       className={className}
       id={id}
       style={style}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

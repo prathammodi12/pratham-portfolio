@@ -8,12 +8,24 @@ export const experiences: ExperienceItem[] = [
     duration: "May 2026 – Present",
     details: [
       {
-        title: "Core Backend & API Development",
-        desc: "Designed and implemented robust Java REST APIs to streamline health-science data exchange and workflow management.",
+        title: "Pharma Quality & Document Systems",
+        desc: "Build modules for a multi-tenant QMS (CAPA, Audit, Deviation, Change Control, Training) and a controlled Document Management System covering approval, release, print tracking and archival.",
       },
       {
-        title: "Frontend Integration & SQL Optimization",
-        desc: "Orchestrated seamless integration of responsive React frontend components with Java endpoints while optimizing SQL relational queries.",
+        title: "Maintenance & Support (QMS and DMS)",
+        desc: "Handle production maintenance and support for the QMS and DMS platforms: resolve user-reported issues, fix bugs, tune queries and ship enhancements to live client environments.",
+      },
+      {
+        title: "Spring Boot Microservices & Security",
+        desc: "Develop Spring Boot services with JWT refresh tokens, role and permission management, signed S3 links and Flyway migrations, and harden endpoints against SQL injection.",
+      },
+      {
+        title: "Reporting & Automation",
+        desc: "Generate dynamic PDF reports with JasperReports and run scheduled weekly, monthly and quarterly email summaries with Excel exports.",
+      },
+      {
+        title: "Full Stack Delivery",
+        desc: "Ship permission-gated Next.js and TypeScript screens backed by React Query, plus JSP interfaces for drug-discovery and quality platforms. 500+ commits across 10+ repositories.",
       },
     ],
   },

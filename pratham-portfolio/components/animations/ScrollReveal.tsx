@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 
 export interface ScrollRevealProps {
   children: React.ReactNode;
@@ -65,7 +65,7 @@ export function ScrollReveal({
   const animationState = viewportTrigger ? (isInView ? "visible" : "hidden") : "visible";
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       initial="hidden"
       animate={animationState}
@@ -75,6 +75,6 @@ export function ScrollReveal({
       style={style}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
