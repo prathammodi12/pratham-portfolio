@@ -101,7 +101,9 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden absolute top-full left-0 right-0 mt-2 glass-panel rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-2xl"
+              // Opaque background: a backdrop blur nested inside the (blurred) navbar
+              // is ignored by browsers, so a translucent panel lets page text show through.
+              className="md:hidden absolute top-full left-0 right-0 mt-2 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 overflow-hidden shadow-2xl"
             >
               <div className="flex flex-col p-6 space-y-4">
                 {navLinks.map((link) => (
