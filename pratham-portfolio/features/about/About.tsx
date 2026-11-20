@@ -14,8 +14,8 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    val: "1+",
-    label: "Year Exp",
+    val: "6+",
+    label: "Months Exp",
     icon: <Target size={18} className="text-indigo-400" />,
   },
   {
